@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br/><br/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/add.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}">
+</div>
+<div class="form-container">
+    <h2>Update Ship Details</h2>
+    <form action="{% url 'update_shipment' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="routes_id">Route Name:</label>
+            <select class="form-control" id="routes_id" name="routes_id">
+                {% for shipment in shipments %}
+                <option value="{{ shipment.routes_id }}">{{ shipment.routes_id }}</option>
+                {% endfor %}
+            </select>
+            <label for="id">Shipment ID:</label>
+            <select class="form-control" id="id" name="id">
+                {% for shipment in shipments %}
+                <option value="{{ shipment.id }}">{{ shipment.id }}</option>
+                {% endfor %}
+            </select>  
+        </div>
+        <div class="form-group">
+            <label for="departure_date">Updated Departure Date:</label>
+            <input type="date" class="form-control" id="departure_date" name="departure_date" required>
+        </div>
+        <div class="form-group">
+            <label for="arrival_date">Updated Arrival Date:</label>
+            <input type="date" class="form-control" id="arrival_date" name="arrival_date" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Shipment</button>
+    </form>
+</div>
+<br/><br/>
+<br/><br/>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br/><br/>
+<center>
+    <h3>Admin Dashboard</h3>
+</center>
+<link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
+<div class="bg-image">
+    <img class="img-fluid" src="{% static 'admin2.jpg' %}" alt="Admin Dashboard Background">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{% url 'user_list' %}">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">User</h5>
+                        <p class="card-text">All Users Details</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="{% url 'current_shipments' %}">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Shipments</h5>
+                        <p class="card-text">Current Shipments</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{% url 'add_tables' %}">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Insert</h5>
+                        <p class="card-text">Add New Details</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="{% url 'delete_customer' %}">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Delete</h5>
+                        <p class="card-text">Details of Customer</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{% url 'route_analysis' %}">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Route Analysis</h5>
+                        <p class="card-text">Popular Routes</p>
+                    </div>
+                </div>
+            </a>
+        </div>    
+        <div class="col-md-6">
+            <a href="{% url 'update_tables' %}">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Update</h5>
+                        <p class="card-text">Details of Customer</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+{% endblock %}

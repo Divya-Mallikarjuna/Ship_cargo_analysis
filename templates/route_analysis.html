@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/show.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+<br/><br/>
+<br/><br/>
+<center><h2>Route Analysis</h2></center>
+<table>
+  <thead>
+    <tr>
+      <th>Route</th>
+      <th>count</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for shipment in route_shipments %}
+      <tr>
+        <td>{{ shipment.routes }}</td>
+        <td>{{ shipment.count }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+{% endblock %}
+

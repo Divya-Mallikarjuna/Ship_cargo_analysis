@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    <title>User List</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">User List</h1>
+        <div class="row">
+            {% for user in users %}
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ user.username }}</h5>
+                        <p class="card-text">Email: {{ user.email }}</p>
+                        <p class="card-text">Active: {{ user.is_active }}</p>
+                        <a href="{% url 'edit_user' user.id %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'toggle_user_status' user.id %}" class="btn btn-{% if user.is_active %}danger{% else %}success{% endif %}">
+                            {% if user.is_active %}
+                                Disable
+                            {% else %}
+                                Enable
+                            {% endif %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <title>Map View</title>
+    <style>
+        /* Styling for the map container */
+        #map {
+            height: 400px;
+            margin-bottom: 20px; /* Add some space below the map */
+        }
+
+        /* Styling for the toggle button */
+        button {
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue color for the button */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <center><button onclick="toggleMapType()">Toggle</button></center>
+
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8,
+                mapTypeId: google.maps.MapTypeId.ROADMAP // Initial map type (normal view)
+            });
+        }
+
+        function toggleMapType() {
+            var currentMapType = map.getMapTypeId();
+            var newMapType = currentMapType === google.maps.MapTypeId.ROADMAP ?
+                             google.maps.MapTypeId.SATELLITE : google.maps.MapTypeId.ROADMAP;
+            map.setMapTypeId(newMapType);
+        }
+    </script>
+    <script src="api_link" async defer></script>
+</body>
+
+<br/><br/>
+<br/><br/>
+{% endblock %}

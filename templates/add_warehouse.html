@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br/><br/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/add.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+  <div class="form-container">
+    <h2> New Warehouse</h2>
+    <p>warehouse details</p>
+    <form action="/page5/" method="post" class="form">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="warehouse_name">Warehouse Name:</label>
+        <input type="text" name="warehouse_name" id="warehouse_name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="capacity">Capacity:</label>
+        <input type="number" name="capacity" id="capacity" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">ADD</button>
+      <a href="{% url 'add_tables' %}" class="btn btn-primary">Back</a>
+      <a href="{% url 'view_ware' %}" class="btn btn-primary">View</a>
+    </form>
+  </div>
+  <br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+{% endblock %}

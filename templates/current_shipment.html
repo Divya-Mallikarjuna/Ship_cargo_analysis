@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/viewer.css' %}">
+<div class="bg-image">
+    <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+<br/><br/>
+<br/><br/>
+<div class="content-container"> 
+    <h1>All Shipments</h1>
+    <ul>
+        {% for shipment in current_shipments %}
+        <li>
+            <strong>Company:</strong> {{ shipment.cust_id }}
+            <strong>Ship Name:</strong> {{ shipment.ships_id }}
+            <strong>Route Name:</strong> {{ shipment.routes_id }}
+            <strong>Pickup Date:</strong> {{ shipment.departure_date }}
+            <strong>Delivery Date:</strong> {{ shipment.arrival_date }}
+        </li>
+        <br/>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

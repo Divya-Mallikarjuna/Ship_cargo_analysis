@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br/><br/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/add.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+  <div class="form-container">
+    <h2> New Shipment</h2>
+    <p>shipment details</p>
+    <form action="/page2/" method="post" class="form">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="departure_date">departure date :</label>
+        <input type="date" name="departure_date" id="departure_date" class="form-control" >
+      </div>
+      <div class="form-group">
+        <label for="arrival_date">arrival date :</label>
+        <input type="date" name="arrival_date" id="arrival_date" class="form-control" >
+      </div>
+      <div class="form-group">
+        <label for="cust">Customer Name:</label>
+        <select name="cust" id="cust" class="form-control">
+            {% for customer in cust %}
+                <option value="{{ customer.company}}">{{ customer.company }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="routes">Routes Name:</label>
+        <select name="routes" id="routes" class="form-control">
+            {% for route in routes %}
+                <option value="{{ route.name }}">{{ route.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="ships">Ship Name:</label>
+        <select name="ships" id="ships" class="form-control">
+            {% for ship in ships %}
+                <option value="{{ ship.ship_name }}">{{ ship.ship_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="pack">Package Name:</label>
+      <select name="pack" id="pack" class="form-control">
+          {% for package in packages %}
+              <option value="{{ package.contents }}">{{ package.contents }}</option>
+          {% endfor %}
+      </select>
+  </div>
+      <button type="submit" class="btn btn-primary">ADD</button>
+      <a href="{% url 'add_tables' %}" class="btn btn-primary">Back</a>
+      <a href="{% url 'view_shipments' %}" class="btn btn-primary">View</a>
+    </form>
+  </div>
+  <br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+{% endblock %}

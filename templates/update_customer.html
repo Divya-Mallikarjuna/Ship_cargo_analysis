@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br/><br/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/add.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}">
+</div>
+<div class="form-container">
+<center>
+<form  action="{% url 'update_customer' %}" method="POST">
+    {% csrf_token %}
+    <label for="customer">Select Customer:</label>
+    <select name="company" id="customer">
+      {% for customer in customers %}
+        <option value="{{ customer.company }}">{{ customer.company }}</option>
+      {% endfor %}
+    </select><br><br>
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone"><br><br>
+    <input type="submit" value="Update">
+  </form>
+</center>
+</div>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+{% endblock %}
+  

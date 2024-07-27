@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/view.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+<head>
+    <title>Delete the Customer</title>
+</head>
+<form action="/delete_customer/" method="post" class="form">
+    {% csrf_token %}
+    <div class="container">
+      <div class="form-group">
+        <label for="company">Select Company:</label>
+        <select name="company" id="company" class="form-control">
+          {% for customer in cust %}
+            <option value="{{ customer.company }}">{{ customer.company }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit">Delete</button>
+    </div>
+</form>    
+{% endblock %}

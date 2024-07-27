@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br/><br/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/add.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}">
+</div>
+<div class="form-container">
+<center>
+<form action="{% url 'update_ware' %}" method="POST">
+    {% csrf_token %}
+    <label for="warehouse_name">Select Warehouse Name:</label>
+    <select name="warehouse_name" id="warehouse_name">
+      {% for warehouse in ware %}
+        <option value="{{ warehouse.warehouse_name }}">{{ warehouse.warehouse_name }}</option>
+      {% endfor %}
+    </select><br><br>
+    <label for="capacity">Capacity:</label>
+    <input type="text" id="capacity" name="capacity"><br><br>
+    <input type="submit" value="Update">
+  </form>
+</center>
+</div>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+{% endblock %}
+  

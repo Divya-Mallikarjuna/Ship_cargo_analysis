@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/confirm.css' %}">
+<div class="bg-image">
+    <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+    <div class="customer-list">
+        <center><h1>All Payments</h1></center>
+        <ul class="customer-items">
+            {% for loc in ware %}
+            <li class="customer-item">
+                <strong>Company name:</strong> {{ loc.company_name_id }}<br>
+                <strong>Capacity:</strong> {{ loc.amount_in_crores }}<br>
+            </li>
+            {% endfor %}
+        </ul>
+        <br/><br/>
+        <a href="{% url 'page7' %}" class="btn btn-primary">Back</a>
+    </div>
+<br/><br/>
+<br/><br/>    
+{% endblock %}

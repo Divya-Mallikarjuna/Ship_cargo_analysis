@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <a href="{% url 'update_customer' %}" style="text-decoration: none;">
+        <div class="card mb-3 text-center" style="max-width: 250px;">
+          <div class="card-body" style="height: 100px;">
+            <h5 class="card-title">Update Customer</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'update_ship' %}" style="text-decoration: none;">
+        <div class="card mb-3 text-center" style="max-width: 250px;">
+          <div class="card-body" style="height: 100px;">
+            <h5 class="card-title">Update Ship</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'update_ware' %}" style="text-decoration: none;">
+        <div class="card mb-3 text-center" style="max-width: 250px;">
+          <div class="card-body" style="height: 100px;">
+            <h5 class="card-title">Update Warehouse</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'update_sup' %}" style="text-decoration: none;">
+        <div class="card mb-3 text-center" style="max-width: 250px;">
+          <div class="card-body" style="height: 100px;">
+            <h5 class="card-title">Update Supplier</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'update_shipment' %}" style="text-decoration: none;">
+        <div class="card mb-3 text-center" style="max-width: 250px;">
+          <div class="card-body" style="height: 100px;">
+            <h5 class="card-title">Update Shipment</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<br/><br/>
+<br/><br/>
+{% endblock %}

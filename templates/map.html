@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/viewer.css' %}">
+<div class="bg-image">
+    <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+<div class="content-container"> 
+<head>
+    <title>Route Information</title>
+</head>
+<body>
+    <center>
+    <h1>Route Information</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Route Name</th>
+                <th>StartLocation</th>
+                <th>Destination</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for route in routes %}
+            <tr>
+                <td>{{ route.name }}</td>
+                <td>{{ route.startlocation_id }}</td>
+                <td>{{ route.destination_id }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br/>
+    <a href="{% url 'map' %}" class="btn btn-primary">View Map</a>
+    </center>
+</body>
+</div>
+
+{% endblock %}
+

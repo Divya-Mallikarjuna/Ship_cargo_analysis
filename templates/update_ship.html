@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br/><br/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/add.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}">
+</div>
+<div class="form-container">
+    <h2>Update Ship Details</h2>
+    <form action="{% url 'update_ship' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="ship_name">Ship Name:</label>
+            <select class="form-control" id="ship_name" name="ship_name">
+                {% for ship in ships %}
+                <option value="{{ ship.ship_name }}">{{ ship.ship_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="ship_type">Updated Ship Type:</label>
+            <input type="text" class="form-control" id="ship_type" name="ship_type" required>
+        </div>
+        <div class="form-group">
+            <label for="capacity">Updated Capacity:</label>
+            <input type="number" class="form-control" id="capacity" name="capacity" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Ship</button>
+    </form>
+</div>
+<br/><br/>
+<br/><br/>
+{% endblock %}

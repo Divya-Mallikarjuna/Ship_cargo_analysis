@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+<br/><br/>
+<br/><br/>
+<center>
+    <h3>User Dashboard</h3>
+</center>
+<div class="container text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <a href="{% url 'shipment_details' %}">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">My Shipments</h5>
+                        <p class="card-text">Track the progress of your shipments</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="{% url 'shipment_view' %}">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Analyse</h5>
+                        <p class="card-text">Track the progress of your shipments</p>
+                    </div>
+                </div>     
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="{% url 'calculate_shipping_rate' %}">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Cost</h5>
+                        <p class="card-text">Latest rates of shipping</p>
+                    </div>
+                </div>     
+            </a>
+        </div>
+    <div class="col-md-6">
+        <a href="{% url 'ship_routes_news' %}">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Latest News</h5>
+                    <p class="card-text">About Routes</p>
+                </div>
+            </div>     
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a href="{% url 'route_map' %}">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Maps</h5>
+                    <p class="card-text">About Routes</p>
+                </div>
+            </div>     
+        </a>
+    </div>
+</div>
+</div>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+{% endblock %}

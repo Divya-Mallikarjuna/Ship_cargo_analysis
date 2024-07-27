@@ -1,0 +1,58 @@
+/* CSS for confirmation page styling */
+
+/* Background image container */
+.bg-image {
+    position: relative;
+    text-align: center;
+}
+
+/* Background image */
+.bg-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Container for the content */
+.content-container { 
+    position: absolute;
+    top: 50%; /* Adjust the vertical position */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Set the width to 90% of the viewport */
+    max-width: 1600px; /* Set a wider maximum width */
+    max-height: 90%; /* Adjust as needed */
+    overflow: auto; /* Add scrollbar when content exceeds container */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    z-index: 1; /* Ensure the content is above the background image */
+}
+
+/* Heading styling */
+.content-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #111414; /* Blue color for headings */
+}
+
+/* List styling */
+.shipment-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+}
+
+/* List item styling */
+.shipment-list li {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light gray background color for list items */
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+}
+
+/* Strong (bold) text styling */
+.shipment-list strong {
+    color: #555; /* Dark gray color for strong text */
+}

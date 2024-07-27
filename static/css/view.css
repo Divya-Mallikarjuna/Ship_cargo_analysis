@@ -1,0 +1,63 @@
+/* CSS for form styling */
+
+/* Background image container */
+.bg-image {
+    position: relative;
+    text-align: center;
+}
+
+/* Background image */
+.bg-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Form container */
+.form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 40px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    text-align: center;
+    max-width: 500%; /* Increased form width */
+    margin: auto; /* Center form horizontally */
+}
+
+/* Form input and label styling */
+.form-group {
+    margin-bottom: 30px; /* Increased margin bottom */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px; /* Increased margin bottom */
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%; /* Set the width to 100% of the container */
+    max-width: 100%; /* Set a maximum width for the input */
+    padding: 15px; /* Adjust padding as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* Button styling */
+button {
+    padding: 15px 30px; /* Increased padding */
+    background-color: #007bff; /* Blue color, change as needed */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #0d0e0f; /* Darker shade on hover */
+}

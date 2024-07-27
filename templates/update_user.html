@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header class="position-relative">
+    <img class="img-fluid bg-image-full" src="{% static 'background.jpg' %}" style="width: 1500px; height: 500px;" />
+    <div class="text-center my-5 position-absolute top-50 start-50 translate-middle" style="z-index: 1;">
+        <h1 class="text-white fs-3 fw-bolder">Update Profile</h1>
+        <p class="text-white-50 mb-0"></p>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <br/><br/>
+            <center>
+         
+            <form  method="POST" action="{% url 'update_user' %}">
+                {% csrf_token %}
+
+                {{ user_form.as_p }}
+                <br/><br/>
+                <button type="submit" class="btn btn-secondary">
+                    Update Profile
+                </button>
+               
+            </form>
+          </center>
+          
+        </div>
+    </div>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+</div>
+{% endblock %}

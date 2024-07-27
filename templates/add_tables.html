@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+<center>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <a href="{% url 'page1' %}" style="text-decoration: none;">
+        <div class="card mb-3 text-center" style="max-width: 250px;">
+          <div class="card-body" style="height: 100px;">
+            <h5 class="card-title">New Customer</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'page2' %}" style="text-decoration: none;">
+        <div class="card mb-3 text-center" style="max-width: 250px;">
+          <div class="card-body" style="height: 100px;">
+            <h5 class="card-title">New Shipments</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'page3' %}" style="text-decoration: none;">
+        <div class="card mb-3 text-center" style="max-width: 250px;">
+          <div class="card-body" style="height: 100px;">
+            <h5 class="card-title">New Ship</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <a href="{% url 'page4' %}" style="text-decoration: none;">
+        <div class="card mb-3 text-center" style="max-width: 250px;">
+          <div class="card-body" style="height: 100px;">
+            <h5 class="card-title">New Route</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'page5' %}" style="text-decoration: none;">
+        <div class="card mb-3 text-center" style="max-width: 250px;">
+          <div class="card-body" style="height: 100px;">
+            <h5 class="card-title">New Warehouse</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'page6' %}" style="text-decoration: none;">
+        <div class="card mb-3 text-center" style="max-width: 250px;">
+          <div class="card-body" style="height: 100px;">
+            <h5 class="card-title">New Supplier</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <a href="{% url 'page7' %}" style="text-decoration: none;">
+        <div class="card mb-3 text-center" style="max-width: 250px;">
+          <div class="card-body" style="height: 100px;">
+            <h5 class="card-title">New Payments</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'page8' %}" style="text-decoration: none;">
+        <div class="card mb-3 text-center" style="max-width: 250px;">
+          <div class="card-body" style="height: 100px;">
+            <h5 class="card-title">New Location</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'page9' %}" style="text-decoration: none;">
+        <div class="card mb-3 text-center" style="max-width: 250px;">
+          <div class="card-body" style="height: 100px;">
+            <h5 class="card-title">New Package</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+</center>
+<br/><br/>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Header - set the background image for the header in the line below-->
+<header class="position-relative">
+    <img class="img-fluid bg-image-full" src="{% static 'background.jpg' %}" style="width: 1500px; height: 500px;" />
+    <div class="text-center my-5 position-absolute top-50 start-50 translate-middle" style="width: 1500px; height: 500px;">
+        <img class="img-fluid rounded-circle mb-4" src="{% static 'logo.png' %}" width="150" />
+        <h1 class="text-white fs-3 fw-bolder">Port Spotlight</h1>
+        <p class="text-white-50 mb-0"></p>
+    </div>
+</header>
+
+<!-- Content section-->
+<section class="py-5">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>Trade Routes Explorer</h2>
+                <p class="lead">Discover the strengths and challenges of key ports around the world, examining their impact on cargo operations, efficiency, and overall trade flow.</p>
+                <p class="mb-0">Get ahead of the curve with our expert analysis on economic trends influencing the cargo industry, helping you make informed decisions for your shipping strategies.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image element - set the background image for the header in the line below-->
+<div class="position-relative">
+    <img class="img-fluid bg-image-full" src="{% static 'moon.jpg' %}" style="width: 1500px; height: 500px;" />
+    <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+    <div style="height: 0.5rem;"></div>
+</div>
+
+<!-- Content section-->
+<section class="py-5">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>Start Your Data-Driven Journey Today</h2>
+                <p class="lead">Whether you're navigating global waters or managing local shipments, CargoIntel is your compass in the sea of data.</p>
+                <p class="mb-0">Join a community of forward-thinking shipping professionals who rely on our expertise. Explore our solutions, start your data-driven journey, and experience a new era in cargo analysis with CargoIntel Solutions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

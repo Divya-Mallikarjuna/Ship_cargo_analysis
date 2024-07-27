@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/show.css' %}">
+<div class="bg-image">
+    <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+<div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Shipment ID</th>
+          <th>Customer ID</th>
+          <th>Ship ID</th>
+          <th>Route ID</th>
+          <th>Departure Date</th>
+          <th>Arrival Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for shipment in shipments %}
+          <tr>
+            <td>{{ shipment.cust_id }}</td>
+            <td>{{ shipment.ships_id }}</td>
+            <td>{{ shipment.routes_id }}</td>
+            <td>{{ shipment.package_id }}</td>
+            <td>{{ shipment.departure_date }}</td>
+            <td>{{ shipment.arrival_date }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  
+</div>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br/><br/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/news.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}" alt="Dashboard Background">
+</div>
+<center><h2>Latest News about Ship Routes</h2></center>
+{% for article in articles %}
+    <div class="article">
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.description }}</p>
+        <p>Published at: {{ article.publishedAt }}</p>
+        <a href="{{ article.url }}" target="_blank">Read More</a>
+    </div>
+{% endfor %}
+<br/><br/>
+<br/><br/>
+{% endblock %}

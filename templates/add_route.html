@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br/><br/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/add.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+  <div class="form-container">
+    <h2> New Route</h2>
+    <p>route details</p>
+    <form action="/page4/" method="post" class="form">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="name">Route Name:</label>
+        <input type="text" name="name" id="name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="duration">Duration:</label>
+        <input type="text" name="duration" id="duration" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="distance">Distance:</label>
+        <input type="text" name="distance" id="distance" class="form-control" >
+      </div>
+      <div class="form-group">
+        <label for="startlocation">Start Location:</label>
+        <select name="startlocation" id="startlocation" class="form-control">
+            {% for location in loc %}
+                <option value="{{ location.city }}">{{ location.city }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="destination">Destination:</label>
+      <select name="destination" id="destination" class="form-control">
+          {% for location in loc %}
+              <option value="{{ location.city }}">{{ location.city }}</option>
+          {% endfor %}
+      </select>
+  </div>
+      <br/>
+      <button type="submit" class="btn btn-primary">ADD</button>
+      <a href="{% url 'add_tables' %}" class="btn btn-primary">Back</a>
+      <a href="{% url 'view_route' %}" class="btn btn-primary">View</a>
+    </form>
+  </div>
+  <br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+{% endblock %}

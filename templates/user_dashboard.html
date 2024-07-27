@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br/><br/>
+<br/><br/>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dboard.css' %}">
+    <div class="bg-image">
+        <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+    </div>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1 class="dashboard-title">Dashboard</h1>
+        
+        <!-- Display user's shipment count -->
+        <div class="shipment-count">
+            <p>Your Shipment Count: <span class="count">{{ user_shipment_count }}</span></p>
+        </div>
+        
+        <!-- Display average shipment count -->
+        <div class="average-count">
+            <p>Average Shipment Count: <span class="count">{{ average_shipment_count }}</span></p>
+        </div>
+        
+        <!-- Graph button -->
+        <a href="{% url 'barchart' %}" class="btn btn-primary">View Graph</a>
+    </div>
+</body>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+{% endblock %}

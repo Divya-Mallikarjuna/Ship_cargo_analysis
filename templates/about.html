@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header class="position-relative">
+  <img class="img-fluid bg-image-full" src="{% static 'background.jpg' %}" style="width: 1500px; height: 500px;" />
+  <div class="text-center my-5 position-absolute top-50 start-50 translate-middle" style="z-index: 1;">
+      <h1 class="text-white fs-3 fw-bolder" style="font-size: 5rem">About</h1>
+      <p class="text-white-50 mb-0"></p>
+  </div>
+</header>
+
+
+  <div class="container mt-5">
+    <h2 class="mb-4">Ship Cargo Analysis</h2>
+    <p style="font-size: 1.2rem;">
+      Ship Cargo Analysis is a web application designed to manage and analyze shipments, routes, and related data.
+      This platform helps businesses streamline their logistics and optimize shipping processes.
+    </p>
+
+    <h3 class="mb-3">Key Features</h3>
+    <ul style="font-size: 1.2rem;">
+      <li>Efficient shipment tracking and management</li>
+      <li>Route optimization for cost-effective shipping</li>
+      <li>Warehouse and supplier management</li>
+      <!-- Add more features as needed -->
+    </ul>
+
+    <h3 class="mb-3">How It Works</h3>
+    <p style="font-size: 1.2rem;">
+      Ship Cargo Analysis allows users to:
+    </p>
+    <ol style="font-size: 1.2rem;">
+      <li>Track shipments from departure to arrival</li>
+      <li>Optimize routes based on distance and duration</li>
+      <li>Manage warehouse inventory and suppliers</li>
+      <!-- Add more functionality descriptions as needed -->
+    </ol>
+
+  </div>
+{% endblock %}

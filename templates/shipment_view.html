@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/view.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+<head>
+    <title>Delete the Customer</title>
+</head>
+<form action="/shipment_view/" method="post" class="form">
+    {% csrf_token %}
+    <br class="form-group">
+      <label for="company">Select Company:</label>
+      <select name="company" id="company" class="form-control">
+        {% for customer in cust %}
+          <option value="{{ customer.company }}">{{ customer.company }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="uid"></label>
+      <input type="number" name="uid" id="uid" class="form-control" placeholder="Enter Customer UID">
+      <br/>
+      <button type="submit">Search</button>
+    </div>
+</form>    
+{% endblock %}

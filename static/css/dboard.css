@@ -1,0 +1,54 @@
+.dashboard-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.dashboard-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.shipment-count,
+.average-count {
+    margin-bottom: 10px;
+}
+
+.count {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it's behind other content */
+}
+
+.bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/confirm.css' %}">
+<div class="bg-image">
+    <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+    <div class="customer-list">
+        <center><h1>All Routes</h1></center>
+        <ul class="customer-items">
+            {% for route in routes %}
+            <li class="customer-item">
+                <strong>Route Name:</strong> {{ route.name }}<br>
+                <strong>Duration:</strong> {{ route.duration }}<br>
+                <strong>Distance:</strong> {{ route.distance }}<br>
+                <strong>Start location:</strong> {{ route.startlocation_id }}<br>
+                <strong>Destination:</strong> {{ route.destination_id }}<br>
+            </li>
+            {% endfor %}
+        </ul>
+        <br/><br/>
+        <a href="{% url 'page4' %}" class="btn btn-primary">Back</a>
+    </div>
+<br/><br/>
+<br/><br/>    
+{% endblock %}

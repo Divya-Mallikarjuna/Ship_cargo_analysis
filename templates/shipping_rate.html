@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/news.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+<br/><br/>
+<br/><br/>
+<center>
+{% if rate %}
+    <h2>Shipping Rate: ${{ rate }}</h2>
+{% endif %}
+{% if error %}
+    <p>{{ error }}</p>
+{% endif %}
+<a href="{% url 'card' %}" class="btn btn-primary">Back</a>
+</center>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+{% endblock %}

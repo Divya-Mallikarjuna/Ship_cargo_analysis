@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br/><br/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/add.css' %}">
+<div class="bg-image">
+  <img class="img-fluid" src="{% static 'admin2.jpg' %}" >
+</div>
+  <div class="form-container">
+    <h2> New Package</h2>
+    <p>package details</p>
+    <form action="/page9/" method="post" class="form">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="contents"> Name:</label>
+        <input type="text" name="contents" id="contents" class="form-control">
+      </div>
+    <div class="form-group">
+      <label for="sup">Supplier Name:</label>
+      <select name="sup" id="sup" class="form-control">
+          {% for supplier in sup %}
+              <option value="{{ supplier.name }}">{{ supplier.name}}</option>
+          {% endfor %}
+      </select>
+    </div>
+  <div class="form-group">
+    <label for="ware">Warehouse Name:</label>
+    <select name="ware" id="ware" class="form-control">
+        {% for warehouse in ware %}
+            <option value="{{ warehouse.warehouse_name }}">{{ warehouse.warehouse_name}}</option>
+        {% endfor %}
+    </select>
+  </div>
+      <button type="submit" class="btn btn-primary">ADD</button>
+      <a href="{% url 'add_tables' %}" class="btn btn-primary">Back</a>
+      <a href="{% url 'view_package' %}" class="btn btn-primary">View</a>
+    </form>
+  </div>
+  <br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+{% endblock %}
